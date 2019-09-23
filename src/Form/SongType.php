@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Song;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,6 +25,9 @@ class SongType extends AbstractType
                     'placeholder' => 'Single Name here',
                     'class' => 'form-control'
                 ]
+            ])
+            ->add('category', EntityType::class,[
+                'class' => 'App\Entity\Category'
             ])
             ->add('slug',TextType::class, [
                 'attr' => [

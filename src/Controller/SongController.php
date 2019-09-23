@@ -39,6 +39,11 @@ class SongController extends AbstractController
             $entityManager->persist($song);
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'ADD SUCCESSFUL'
+            );
+
             return $this->redirectToRoute('song_index');
         }
 
@@ -68,6 +73,11 @@ class SongController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash(
+                'info',
+                'UPDATE SUCCESSFUL'
+            );
 
             return $this->redirectToRoute('song_index');
         }
