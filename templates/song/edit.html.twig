@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Song{% endblock %}
+
+{% block body %}
+
+    <div class="container" style="background: #aacd4e; border: solid #222222">
+        <h1>Edit Song</h1>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-7"></div>
+                    <div class="col-sm-5">
+                        <div class="row">
+                            <a href="{{ path('song_index') }}" class="btn btn-info mr-1 ml-5">back to list</a>
+                            {{ include('song/_delete_form.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+                {{ include('song/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+
+{% endblock %}
